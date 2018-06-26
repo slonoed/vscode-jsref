@@ -1,0 +1,38 @@
+{
+	"name": "@slonoed/vscode-jsref",
+	"description": "VSCode plugin for Jsref language server",
+	"author": "Dmitry Manannikov",
+	"license": "MIT",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/slonoed/vscode-jsref"
+	},
+	"publisher": "slonoed",
+	"categories": [],
+	"keywords": ["jsref"],
+	"engines": {
+		"vscode": "^1.23.0"
+	},
+	"activationEvents": [
+		"onLanguage:javascript"
+	],
+	"main": "./out/extension",
+	"contributes": {},
+	"scripts": {
+		"vscode:prepublish": "npm run update-vscode && npm run compile",
+		"compile": "tsc -p ./client/tsconfig.json",
+		"watch": "tsc -w -p ./client/tsconfig.json",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"update-vscode": "node ./node_modules/vscode/bin/install"
+	},
+	"dependencies": {
+		"vscode": "^1.1.18",
+		"vscode-languageclient": "^4.1.4"
+	},
+	"devDependencies": {
+		"@types/mocha": "^5.2.0",
+		"@types/node": "^8.0.0",
+		"typescript": "2.8.3"
+	}
+}
